@@ -60,12 +60,14 @@ Then, to modify partition tables, use **fdisk**
 > mkfs.ext4 /dev/root_partition
 > mkfs.ext4 /dev/sda
 
+![partition](/images/mkfs-sda.png)
 ### Step 7: Mount the file systems:
 * use command **mount**
 > mount /dev/root_partition /mnt
 
 > mount /dev/sda /mnt
 
+![mount](/images/mount-sda-to-mnt.png)
 ## Installation
 
 ## STEP 1: Select mirrors
@@ -74,11 +76,13 @@ Then, to modify partition tables, use **fdisk**
 > pacstrap -K /mnt base linux linux-firmware
 * Tip: can substitute **linux** with **kernel**
 
+![pacstrap command](/images/pacstrap-linux-firmware.png)
 ## Configure the system
 
 ## STEP 1: generate fstab file
 > genfstab -U /mnt >> /mnt/etc/fstab
 
+![fstab](/images/check-mnt-etc-fstab.png)
 ## Step 2: set time zone
 use command
 > ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
